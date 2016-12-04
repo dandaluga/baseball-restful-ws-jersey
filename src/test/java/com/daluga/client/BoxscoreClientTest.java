@@ -4,6 +4,7 @@ import com.daluga.model.Boxscore;
 
 import com.daluga.model.BoxscoreSearch;
 import com.daluga.model.BoxscoreSearchType;
+import com.daluga.util.DateUtil;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -133,8 +134,8 @@ public class BoxscoreClientTest {
 
         BoxscoreSearch search = new BoxscoreSearch();
         search.setName(names);
-        search.setFromDate(formatDate("09/01/2015"));
-        search.setToDate(formatDate("09/15/2015"));
+        search.setFromDate(DateUtil.formatDate("09/01/2015"));
+        search.setToDate(DateUtil.formatDate("09/15/2015"));
         search.setSearchType(BoxscoreSearchType.SEARCH_BY_NAME);
 
         List<Boxscore> boxscores = client.search(search);
@@ -142,21 +143,5 @@ public class BoxscoreClientTest {
         logger.debug(boxscores.toString());
 
         assertNotNull(boxscores);
-    }
-
-    private Date formatDate(String dateString) {
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = null;
-
-        try {
-            date = formatter.parse(dateString);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        logger.debug("Date: " + date);
-
-        return date;
     }
 }

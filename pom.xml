@@ -20,24 +20,24 @@
                 <version>3.3</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
             <!-- Requires Java 7 -->
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.2.13.v20150730</version>
-            </plugin>
-
-            <!-- Requires Java 8 -->
             <!--<plugin>-->
                 <!--<groupId>org.eclipse.jetty</groupId>-->
                 <!--<artifactId>jetty-maven-plugin</artifactId>-->
-                <!--<version>9.3.5.v20151012</version>-->
+                <!--<version>9.2.13.v20150730</version>-->
             <!--</plugin>-->
+
+            <!-- Requires Java 8 -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.3.5.v20151012</version>
+            </plugin>
 
         </plugins>
     </build>
