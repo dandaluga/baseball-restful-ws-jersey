@@ -31,6 +31,7 @@ public class BoxscoreApplication extends Application {
 
             // Add Event Listeners
             add(BoxscoreApplicationEventListener.class);
+            System.out.println("Hello World");
         }};
     }
 
